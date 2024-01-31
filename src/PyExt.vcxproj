@@ -120,10 +120,8 @@
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PyInterpreterFrame.cpp" />
     <ClCompile Include="PyInterpreterState.cpp" />
-    <ClInclude Include="..\include\PyCellObject.h" />
-    <ClInclude Include="PyInterpreterState.h" />
-    <ClInclude Include="..\include\PyMemberDef.h" />
     <ClCompile Include="PyMemberDef.cpp" />
     <ClCompile Include="pysetautointerpreterstate.cpp" />
     <ClCompile Include="pystack.cpp" />
@@ -152,15 +150,18 @@
     <ClInclude Include="..\include\PyStringValue.h" />
     <ClInclude Include="..\include\PyBoolObject.h" />
     <ClInclude Include="..\include\PyByteArrayObject.h" />
+    <ClInclude Include="..\include\PyCellObject.h" />
     <ClInclude Include="..\include\PyCodeObject.h" />
     <ClInclude Include="..\include\PyComplexObject.h" />
     <ClInclude Include="..\include\PyDictObject.h" />
     <ClInclude Include="..\include\PyFloatObject.h" />
     <ClInclude Include="..\include\PyFrameObject.h" />
     <ClInclude Include="..\include\PyFunctionObject.h" />
+    <ClInclude Include="..\include\PyInterpreterFrame.h" />
     <ClInclude Include="..\include\PyIntObject.h" />
     <ClInclude Include="..\include\PyListObject.h" />
     <ClInclude Include="..\include\PyLongObject.h" />
+    <ClInclude Include="..\include\PyMemberDef.h" />
     <ClInclude Include="..\include\PyNoneObject.h" />
     <ClInclude Include="..\include\PyNotImplementedObject.h" />
     <ClInclude Include="..\include\PyObject.h" />

@@ -35,8 +35,10 @@ namespace PyExt::Remote {
 		// instead of stopping at the first \0.
 		const auto len = stringLength();
 		string buffer(utils::lossless_cast<size_t>(len), '\0');
-		auto sval = remoteType().Field("ob_sval");
-		sval.Dereference().ReadBuffer(buffer.data(), utils::lossless_cast<ULONG>(buffer.size()));
+		if (len > 0) {
+			auto sval = remoteType().Field("ob_sval");
+			sval.Dereference().ReadBuffer(buffer.data(), utils::lossless_cast<ULONG>(buffer.size()));
+		}
 		return buffer;
 	}
 

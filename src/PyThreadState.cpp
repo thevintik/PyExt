@@ -1,3 +1,4 @@
+#include "PyInterpreterFrame.h"
 #include "PyThreadState.h"
 #include "PyFrameObject.h"
 
@@ -32,9 +33,9 @@ namespace PyExt::Remote {
 	}
 
 
-	auto PyThreadState::frame() const -> std::unique_ptr<PyFrameObject>
+	auto PyThreadState::frame() const -> std::unique_ptr<_PyInterpreterFrame>
 	{
-		return utils::fieldAsPyObject<PyFrameObject>(remoteType(), "frame");
+		return make_unique<_PyInterpreterFrame>(RemoteType(remoteType().Field("cframe").Field("current_frame")));
 	}
 
 
@@ -69,9 +70,10 @@ namespace PyExt::Remote {
 	auto PyThreadState::allFrames() const -> std::vector<PyFrameObject>
 	{
 		vector<PyFrameObject> frames;
-		for (auto f = frame(); f != nullptr; f = f->back()) {
+		// TODO: change return type to _PyInterpreterFrame and uncomment
+		/*for (auto f = frame(); f != nullptr; f = f->previous()) {
 			frames.push_back(*f);
-		}
+		}*/
 		return frames;
 	}
 

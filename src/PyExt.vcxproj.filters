@@ -124,7 +124,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="objects\PyCellObject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\objects</Filter>
     </ClCompile>
     <ClCompile Include="PyInterpreterState.cpp">
       <Filter>Source Files</Filter>
@@ -133,6 +133,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pysetautointerpreterstate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PyInterpreterFrame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -234,12 +237,12 @@
       <Filter>Header Files\objects</Filter>
     </ClInclude>
     <ClInclude Include="..\include\PyCellObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PyInterpreterState.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\objects</Filter>
     </ClInclude>
     <ClInclude Include="..\include\PyMemberDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PyInterpreterFrame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

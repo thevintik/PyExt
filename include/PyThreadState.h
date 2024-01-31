@@ -10,6 +10,7 @@ class ExtRemoteTyped;
 namespace PyExt::Remote {
 
 	class PyFrameObject;
+	class _PyInterpreterFrame;
 
 	/// Represents a PyInterpreterState instance in the debuggee's address space.
 	/// @see https://github.com/python/cpython/blob/master/Include/pystate.h
@@ -21,7 +22,7 @@ namespace PyExt::Remote {
 
 	public: // Members of the remote type.
 		auto next() const -> std::unique_ptr<PyThreadState>;
-		auto frame() const ->std::unique_ptr<PyFrameObject>;
+		auto frame() const ->std::unique_ptr<_PyInterpreterFrame>;
 		auto recursion_depth() const -> long;
 		auto tracing() const -> long;
 		auto use_tracing() const -> long;

@@ -28,6 +28,10 @@ namespace {
 			return keys.Field("dk_entries");
 
 		// Python 3.6 uses a "compact" layout where the entries appear after the `ma_keys->dk_indices` table.
+
+		// This is broken in 3.11, should be changed to something like dk_log2_index_bytes
+		// https://github.com/python/cpython/blob/3.10/Objects/dict-common.h#L22
+		// https://github.com/python/cpython/blob/3.11/Include/internal/pycore_dict.h#L87
 		auto sizeField = keys.Field("dk_size");
 		auto size = utils::readIntegral<PyObject::SSize>(sizeField);
 		auto pointerSize = static_cast<int>(keys.GetPointerTo().GetTypeSize());
